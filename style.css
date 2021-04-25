@@ -135,6 +135,7 @@ h1 {
 
 #photoviewer-close {
     position: relative;
+    display: inline;
     float: right;
     padding: 0.5rem;
     font-size: 1rem;
