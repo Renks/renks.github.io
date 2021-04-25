@@ -134,15 +134,16 @@ h1 {
 }
 
 #photoviewer-close {
-    position: relative;
+    position: absolute;
     display: inline;
-    float: right;
+    right: 0;
     padding: 0.5rem;
     font-size: 1rem;
     font-weight: 600;
     text-align: right;
     cursor: pointer;
     transition-duration: 0.25s;
+    z-index: 1;
 }
 
 #photoviewer-close:hover {
@@ -151,18 +152,20 @@ h1 {
 
 #photoviewer-content {
     position: relative;
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
     width: 100%;
     height: 90%;
-    overflow-y: auto;
+    margin: 0 auto;
+    margin-top: 2%;
     transform-origin: center;
     transform: scale(0, 0);
     transition-duration: 0.5s;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    overflow-y: auto;
 }
-
-#photoviewer-content>img {
+#photoviewer-content>#photoviewer-image>img {
     position: relative;
     width: 1000px;
     object-fit: contain;
@@ -170,10 +173,10 @@ h1 {
 }
 
 #photoviewer-content>#photoviewer-text {
-    width: 1000px;
+    width: 100%;
+    height: 50%;
     /* Keep the same width as the img*/
     text-align: center;
-    margin-top: 1rem;
     line-height: 1.5rem;
 }
 
@@ -222,26 +225,6 @@ h1 {
         margin: auto;
         border-radius: 0;
     }
-    #photoviewer-close {
-        position: absolute;
-        top: 0;
-        right: 0;
-        padding: 2rem;
-        font-size: 2rem;
-        z-index: 1;
-    }
-    #photoviewer-content {
-       border: 1px solid red;
-       height: 100%
-    }
-    #photoviewer-content>img {
-        width: 95%;
-    }
-    #photoviewer-content>#photoviewer-text {
-        width: auto;
-        margin-top: 0;
-        line-height: auto;
-    }
 }
 
 @media only screen and (max-width: 604px) {
@@ -261,5 +244,24 @@ h1 {
     }
     .wrapper>.text {
         height: 20%;
+    }
+    #photoviewer-content>#photoviewer-image {
+        display: flex;
+        width: 100%;
+        height: 50%;
+        align-content: flex-end;
+        flex-wrap: wrap;
+    }
+    #photoviewer-content>#photoviewer-image>img {
+        width: 100%;
+        object-fit: contain;
+        /* Resizes the image to fit the width and maintains the aspect-ratio */
+    }
+    #photoviewer-content>#photoviewer-text {
+        width: 100%;
+        height: 50%;
+        /* Keep the same width as the img*/
+        text-align: center;
+        line-height: 1.5rem;
     }
 }
