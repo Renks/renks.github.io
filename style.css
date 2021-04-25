@@ -223,6 +223,8 @@ h1 {
         border-radius: 0;
     }
     #photoviewer-close {
+        position: absolute;
+        right: 0;
         padding: 2rem;
         font-size: 2rem;
     }
