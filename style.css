@@ -1,0 +1,256 @@
+@import url("https://fonts.googleapis.com/css?family=Roboto:400,400i,700");
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Roboto';
+    color: #fff;
+}
+
+body {
+    position: relative;
+    height: 100%;
+    background-color: #242424;
+}
+
+#fakeBody {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    z-index: -100000;
+}
+
+#fakeBody::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    filter: grayscale(50%);
+    background-image: url('https://source.unsplash.com/1600x900/?gaming');
+}
+
+#main {
+    width: 90%;
+    margin: 0 auto;
+    background-color: #2e2e2e;
+    border-radius: 10px;
+}
+
+#header {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    margin: 0 auto;
+}
+
+h1 {
+    display: inline;
+    background-color: #2e2e2e;
+    border-radius: 20px 20px 0 0;
+    text-align: center;
+    font-family: monospace;
+    padding: 10px;
+    margin-top: 3%;
+}
+
+#info {
+    display: inline-block;
+    /* Making sure div's width is as wide as its context*/
+    margin: 1rem;
+    position: relative;
+    user-select: none;
+    -moz-user-select: none;
+    -khtml-user-select: none;
+    -webkit-user-select: none;
+    -o-user-select: none;
+    cursor: cell;
+}
+
+#info::before {
+    content: ' ';
+    color: #ff0000;
+    padding-left: 0.3em;
+    margin-right: 0.1em;
+    width: 100px;
+    height: 100px;
+    background-color: #ff0000;
+}
+
+#info::after {
+    content: '   |    Source: Apne Robin Bhai';
+    font-size: 0.7rem;
+    color: #aaaaaa;
+}
+
+#flex-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    position: relative;
+    width: 100%;
+}
+
+.wrapper {
+    width: 300px;
+    height: 210px;
+    position: relative;
+    margin-bottom: 1rem;
+    margin: 1em 0;
+    padding-left: 20px;
+}
+
+.wrapper>img {
+    position: relative;
+    width: 100%;
+    height: 90%;
+    user-select: none;
+    -moz-user-select: none;
+    -khtml-user-select: none;
+    -webkit-user-select: none;
+    -o-user-select: none;
+    cursor: pointer;
+}
+
+.wrapper>.text {
+    position: relative;
+    width: 100%;
+    height: 10%;
+    overflow: auto;
+}
+
+#photoviewer {
+    display: none;
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    background-color: rgba(37, 37, 37, 0.9);
+    transform-origin: center;
+    transform: scale(1, 1);
+    transition-duration: 0.25s;
+}
+
+#photoviewer-close {
+    position: relative;
+    float: right;
+    padding: 0.5rem;
+    font-size: 1rem;
+    font-weight: 600;
+    text-align: right;
+    cursor: pointer;
+    transition-duration: 0.25s;
+}
+
+#photoviewer-close:hover {
+    background-color: red;
+}
+
+#photoviewer-content {
+    position: relative;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    width: 100%;
+    height: 90%;
+    overflow-y: auto;
+    transform-origin: center;
+    transform: scale(0, 0);
+    transition-duration: 0.5s;
+}
+
+#photoviewer-content>img {
+    position: relative;
+    width: 1000px;
+    object-fit: contain;
+    /* Resizes the image to fit the width and maintains the aspect-ratio */
+}
+
+#photoviewer-content>#photoviewer-text {
+    width: 1000px;
+    /* Keep the same width as the img*/
+    text-align: center;
+    margin-top: 1rem;
+    line-height: 1.5rem;
+}
+
+::-webkit-scrollbar {
+    width: 5px;
+}
+
+/* Track */
+
+::-webkit-scrollbar-track {
+    background-color: #2e2e2e;
+}
+
+/* Handle */
+
+::-webkit-scrollbar-thumb {
+    background: #8888884d;
+    border-radius: 0 0 20px 20px;
+}
+
+/* Handle on hover */
+
+::-webkit-scrollbar-thumb:hover {
+    background: #888888;
+}
+
+::-moz-selection {
+    background-color: #df4d4d;
+    color: #fff;
+}
+
+::selection {
+    background-color: #df4d4d;
+    color: #fff;
+}
+
+@media only screen and (max-width: 1028px) {
+    /* For tablets: */
+    #info {
+        width: 100%;
+        margin: 1rem auto;
+        text-align: center;
+    }
+    #main {
+        width: 100%;
+        margin: auto;
+        border-radius: 0;
+    }
+    #photoviewer-close {
+        padding: 2rem;
+        font-size: 2rem;
+    }
+    #photoviewer-content>img {
+        width: 95%;
+    }
+    #photoviewer-content>#photoviewer-text {
+        width: auto;
+        margin-top: 0;
+        line-height: auto;
+    }
+}
+
+@media only screen and (max-width: 604px) {
+    #flex-container {
+        justify-content: space-between;
+        flex-wrap: wrap;
+    }
+    .wrapper {
+        display: inline-block;
+        width: 90%;
+        height: 300px;
+        margin: 1.6em auto;
+        padding: 0;
+    }
+    .wrapper>img {
+        height: 80%;
+    }
+    .wrapper>.text {
+        height: 20%;
+    }
+}
