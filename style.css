@@ -231,6 +231,7 @@ h1 {
         z-index: 1;
     }
     #photoviewer-content {
+       border: 1px solid red;
        height: 100%
     }
     #photoviewer-content>img {
