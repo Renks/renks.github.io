@@ -224,9 +224,11 @@ h1 {
     }
     #photoviewer-close {
         position: absolute;
+        top: 0;
         right: 0;
         padding: 2rem;
         font-size: 2rem;
+        color: yellow;
     }
     #photoviewer-content>img {
         width: 95%;
