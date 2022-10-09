@@ -79,7 +79,7 @@ h1 {
 }
 
 #info::after {
-    content: '   |    Source: Apne Robin Bhai';
+    content: '   |    Source: None';
     font-size: 0.7rem;
     color: #aaaaaa;
 }
