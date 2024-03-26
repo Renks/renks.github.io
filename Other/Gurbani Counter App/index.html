@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gurbani Counter App</title>
+    <link rel="shortcut icon" href="assets/favicon/favicon-khanda-solid.ico" type="image/x-icon">
+    <link href="assets/css/style.css" rel="stylesheet" />
+    <link href="assets/css/style-inputGroup.css" rel="stylesheet" />
+    <!-- our project just needs Font Awesome Solid -->
+    <link href="assets/fontawesome/css/fontawesome.css" rel="stylesheet" />
+    <!-- <link href="./assets/fontawesome/css/brands.css" rel="stylesheet" /> -->
+    <link href="assets/fontawesome/css/solid.css" rel="stylesheet" />
+    <script src="assets/js/script.js"></script>
+    <!-- <link rel="stylesheet" href="font-awesome-4.7.0/css/font-awesome.min.css"> -->
+    <!-- <script src="https://kit.fontawesome.com/593a0b847a.js" crossorigin="anonymous"></script> -->
+    <!-- <script src="font-awesome-4.7.0/font-awesome-dot-com-kit-hoxabel/fa-hoxabel-kit.js" crossorigin="anonymous"></script> -->
+    <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"> -->
+
+</head>
+
+<body>
+    <div id="btns">
+
+        <div class="inputGroup">
+            <input type="number" required="" autocomplete="off" name="maxCounter" id="counterMaxInput"
+                onchange="setCounterMaxVal(this)" value="" min="1" />
+            <label for="name">Max</label>
+        </div>
+        <!-- <span style="user-select: none;">Max:</span>
+            <input type="number" name="maxCounter" id="counterMaxInput" onchange="setCounterMaxVal(this)" value=""
+                min="1" /> -->
+        <div id="progressInfo">
+            <progress id="counterProgressBar" max="" value="0"></progress>
+            <span id="info" style="user-select: none;">Count: NaN/NaN</span>
+        </div>
+
+
+        <!-- <button onclick="addCount(this)">Add Counter</button> -->
+        <button onclick="removeCount(this)" class="btn"><i class="fa-solid fa-delete-left"></i></button>
+        <button onclick="resetCount(this)" class="btn"><i class="fa fa-trash" aria-hidden="true"></i>
+        </button>
+        <button id="fullscreenBtn" onclick="toggleFullScreen(this)" class="btn"><i class="fa fa-expand"
+                aria-hidden="true"></i>
+        </button>
+    </div>
+    <div id="addCounterDiv" onclick="addCount(this)"><span class="logo-khanda"><i class="fa-solid fa-khanda"></i></span></div>
+</body>
+
+</html>
